@@ -27,6 +27,6 @@ let chars = `
 // module.exports.chars = () => {
 //   console.log(chars)
 // }
-export default () => {
+module.exports = () => {
   console.log(chars);
 };

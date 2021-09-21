@@ -6,10 +6,10 @@ const say = require("say");
 const argv = require("yargs").argv,
 queryStr = encodeURI(argv.\_.join(" "));
 */
-import http from 'http'
+
 function translate(query) {
   //发送翻译请求
-  // let http = require('http');
+  let http = require('http');
   // 1.用于请求的选项
   let options = {
     host: 'fanyi.youdao.com',
@@ -82,7 +82,7 @@ function format(json) {
   console.log(template);
 }
 
-export default translate;
+module.exports = translate;
 
 /* 
 say colors yargs -S

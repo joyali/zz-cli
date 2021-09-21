@@ -1,6 +1,6 @@
 // const createComponent = require("./commanderAction/createComponent"); // async
 // const { test } = require('./commanderAction/test')
-import action from './commanderAction/index.js';
+const action = require('./commanderAction/index.js');
 
 const commandList = [
   {
@@ -12,8 +12,8 @@ const commandList = [
       ['-v2, --vue2', 'vue2 template'],
       ['-v3, --vue3', 'vue3 template'],
     ],
-    action: action.create,
-    // action: require('./commanderAction/create'),
+    // action: action.create,
+    action: require('./commanderAction/create'),
     examples: [
       '-r',
       '--react',
@@ -42,16 +42,15 @@ const commandList = [
     description: 'translate word',
     alias: 'd',
     options: [],
-    action: action.translate,
-    // action: require('./commanderAction/translate'),
+    action: require('./commanderAction/translate'),
   },
   {
     command: 'emoji',
     description: 'color emoji chars',
     alias: 'chr',
     options: [],
-    action: action.chars,
-    // action: require('./commanderAction/chars'),
+    // action: action.chars,
+    action: require('./commanderAction/chars'),
   },
 ];
 
@@ -84,7 +83,7 @@ const registerAction = (program, commandItem) => {
   return program;
 };
 
-export {
+module.exports = {
   commandList,
   registerAction,
 };

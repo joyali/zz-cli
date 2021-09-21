@@ -1,8 +1,8 @@
-import create from './create.js';
-import chars from './chars.js';
-import translate from './translate.js';
+const create = require('./create.js');
+const chars = require('./chars.js');
+const translate = require('./translate.js');
 
-export default {
+module.exports = {
   create,
   chars,
   translate,

@@ -1,20 +1,18 @@
-import fs from 'fs';
-import path from 'path';
-import download from 'download-git-repo';
-import handlebars from 'handlebars';
-import inquirer from 'inquirer';
+const fs = require('fs');
+const path = require('path');
+const download = require('download-git-repo');
+const handlebars = require('handlebars');
+const inquirer = require('inquirer');
 // 下载美化使用
-import ora from 'ora';
-// import('ora').then((res) => { // commonjs import es6
+const ora = require('ora');
+// import('ora').then((res) => {
 //     console.log(111,res)
 // })
-import chalk from 'chalk';
-import symbols from 'log-symbols';
+const chalk = require('chalk');
+const symbols = require('log-symbols');
 
-const downloadGitRepoOptions = {
-  clone: true,
-};
-// If true use git clone instead of an http download.
+const downloadGitRepoOptions = { clone: true };
+// If true use git clone instead of an http download. 
 // While this can be a bit slower, it does allow private repositories to be used if the appropriate SSH keys are setup.
 // https://www.npmjs.com/package/download-git-repo
 // GitHub - github:owner/name or simply owner/name
@@ -38,6 +36,7 @@ let tplUrl = urlConfig['vue3'];
 function create(...args) {
   let [projectName, options] = args;
   // console.log('create', projectName, options);
+  // console.log(fs.existsSync(projectName));
   if (!fs.existsSync(projectName)) {
     if (options.react) {
       tplUrl = urlConfig['react'];
@@ -99,4 +98,4 @@ function create(...args) {
   }
 }
 
-export default create;
+module.exports = create;

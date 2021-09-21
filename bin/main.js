@@ -1,9 +1,9 @@
 #!/usr/bin/env node
-import program from 'commander';
+const program = require('commander');
 
-import colors from 'colors';
+var colors = require('colors');
 
-import { commandList, registerAction } from "./commanderConfig.js";
+const { commandList, registerAction } = require("./commanderConfig.js");
 
 program.name('zz-cli')
 program.version("1.0.0", '-V, --version');
